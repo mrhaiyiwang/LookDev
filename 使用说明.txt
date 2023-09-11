@@ -1,0 +1,32 @@
+您好！
+
+感谢您抽空体验Demo，下面附上使用说明，文末有渲染流程介绍
+
+相机浏览：
+按住左键并拖拽：偏移；按住右键并拖拽：旋转；鼠标滚轮：缩放
+
+PBR材质编辑：
+（键盘按键）
+按住W：增加金属度； 按住S：减少金属度； 按住W：增加粗糙度； 按住A：减少粗糙度
+
+============================================================================
+
+渲染流程介绍：
+
+采用了Unity引擎构建demo
+
+相机浏览和帧率：自行实现相关脚本
+
+基于物理的光照：自行实现PBR.shader，项目/Asset中可查看
+
+材质球和天空盒：https://ambientcg.com/
+
+shader工作流概况：
+定义属性-顶点着色器（normal mapping）-片元着色器（diffuse + specular；直接光照和环境间接光照分开计算)-输出
+
+BRDF实现位于PBRLib.cginc文件，采用Lambertian diffuse着色，菲涅尔项参考了disney brdf（2015）。法线分布函数和几何遮蔽函数分别采用了trowbridgeReitz model（1975）和schlick近似（1994）
+
+备注：
+笔试通过邮箱仅能发送build程序和文档，如需查看原工程项目，请查看https://drive.google.com/file/d/1yhVSGAss5AkHsuqMF-aDhNy-Tt2taVxg/view?usp=drive_link
+或
+https://github.com/mrhaiyiwang/LookDev
